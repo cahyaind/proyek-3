@@ -21,6 +21,10 @@ Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('/login', 'App\Http\Controllers\AuthController@login')->name('login');
 Route::post('/postlogin', 'App\Http\Controllers\AuthController@postlogin');
+
+Route::get('/register', 'App\Http\Controllers\AuthController@register')->name('login');
+Route::post('/postregister', 'App\Http\Controllers\AuthController@postregister');
+
 Route::get('/logout', 'App\Http\Controllers\AuthController@logout');
 
 Route::get('/pemilik', 'App\Http\Controllers\PemilikController@index');
