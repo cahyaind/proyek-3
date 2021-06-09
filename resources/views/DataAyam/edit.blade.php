@@ -31,10 +31,7 @@
                                             <label for="inputAyamMati" class="form-label">Ayam Mati</label>
                                             <input name="jmlmati" type="text" class="form-control" id="inputAyamMati" aria-describedby="emailHelp" value="{{$data_ayam->jmlmati}}">
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="inputTotal" class="form-label">Total</label>
-                                            <input name="total" type="text" class="form-control" id="inputTotal" aria-describedby="emailHelp" value="{{$data_ayam->total}}">
-                                        </div>
+
                                         <br>
                                         <button type="submit" class="btn btn-warning">Update</button>
                                     </form>

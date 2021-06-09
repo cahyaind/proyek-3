@@ -10,7 +10,14 @@
 						<div class="panel-heading">
 							<h3 class="panel-title"><b> Data Stok Pakan </b></h3>
                             <!-- Button trigger modal -->
-                            <div class="right">
+                            
+							<div class="left">
+                                <a href="{{ route('datapakanexport') }}" class="btn btn-primary btn-sm" >
+                                    Download Data
+                                </a>
+                            </div>
+							
+							<div class="right">
                                 <a type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
                                     Tambah Data Stok Pakan
                                 </a>

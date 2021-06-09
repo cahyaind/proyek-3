@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\datapakanexport;
+use Excel;
 use Illuminate\Http\Request;
 use App\Models\DataPakan;
+
+
 
 class DataPakanController extends Controller
 {
@@ -14,6 +18,10 @@ class DataPakanController extends Controller
         return view('DataPakan.index', ['data_pakan' => $data_pakan]);
     }
 
+	public function datapakanexport(){
+		return Excel::download (new datapakanexport,'DataPakan.xlsx');
+	}
+	
     public function create(Request $request)
     {
         

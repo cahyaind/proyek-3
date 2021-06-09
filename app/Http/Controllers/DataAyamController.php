@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\dataayamexport;
+use Excel;
 use App\models\DataAyam;
 use Illuminate\Http\Request;
 
@@ -16,10 +18,20 @@ class DataAyamController extends Controller
         }
         return view('DataAyam.index', ['data_ayam' => $data_ayam]);
     }
+	
+	public function dataayamexport(){
+		return Excel::download (new dataayamexport,'DataAyam.xlsx');
+	}
 
     public function create(Request $request)
     {
-        \App\Models\DataAyam::create($request->all());
+        DataAyam::create([
+			'periodeawal' =>$request->periodeawal,
+			'periodeakhir' => $request->periodeakhir,
+			'jmlawal' =>$request->jmlawal,
+			'jmlmati' =>$request->jmlmati,
+			'total' =>$request->jmlawal - $request->jmlmati,
+		]);
         return redirect ('/data_ayam')->with('pesan','Data berhasil disimpan..');
     }
 
@@ -32,7 +44,13 @@ class DataAyamController extends Controller
     public function update(Request $request, $id)
     {
         $data_ayam = DataAyam::findorfail($id);
-        $data_ayam->update($request->all());
+        $data_ayam->update([
+			'periodeawal' =>$request->periodeawal,
+			'periodeakhir' => $request->periodeakhir,
+			'jmlawal' =>$request->jmlawal,
+			'jmlmati' =>$request->jmlmati,
+			'total' =>$request->jmlawal - $request->jmlmati,
+		]);
         return redirect('data_ayam')->with('pesan','Data berhasil diupdate..');
     }
 

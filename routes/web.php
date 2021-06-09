@@ -37,11 +37,15 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/data_ayam/{id}/edit', 'App\Http\Controllers\DataAyamController@edit');
     Route::post('/data_ayam/{id}/update', 'App\Http\Controllers\DataAyamController@update');
     Route::get('/data_ayam/{id}/hapus', 'App\Http\Controllers\DataAyamController@hapus');
+	Route::get('/dataayamexport', 'App\Http\Controllers\DataAyamController@dataayamexport')->name('dataayamexport');
 
     Route::get('/data_pakan', 'App\Http\Controllers\DataPakanController@index');
     Route::post('/data_pakan/create', 'App\Http\Controllers\DataPakanController@create');
     Route::get('/data_pakan/{id}/edit', 'App\Http\Controllers\DataPakanController@edit');
     Route::post('/data_pakan/{id}/update', 'App\Http\Controllers\DataPakanController@update');
     Route::get('/data_pakan/{id}/hapus', 'App\Http\Controllers\DataPakanController@hapus');
+	Route::get('/datapakanexport', 'App\Http\Controllers\DataPakanController@datapakanexport')->name('datapakanexport');
+	
+	
 });
 

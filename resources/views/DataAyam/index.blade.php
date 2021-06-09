@@ -10,6 +10,12 @@
 						<div class="panel-heading">
 							<h3 class="panel-title"><b> Data Ayam </b></h3>
                             <!-- Button trigger modal -->
+							
+							<div class="left">
+                                <a href="{{ route('dataayamexport') }}" class="btn btn-primary btn-sm" >
+                                    Download Data
+                                </a>
+                            </div>
                             <div class="right">
                                 <a type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
                                     Tambah Data Ayam
@@ -44,11 +50,6 @@
                                     <div class="mb-3">
                                         <label for="inputJmlMati" class="form-label">Jumlah Ayam Mati</label>
                                         <input name="jmlmati" type="text" class="form-control" id="inputJmlMati" aria-describedby="JmlMatiHelps">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="inputTotal" class="form-label">Total</label>
-                                        <input name="total" type="text" class="form-control" id="inputTotal" aria-describedby="totalHelp">
                                     </div>
 
 
